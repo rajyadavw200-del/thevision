@@ -1,0 +1,1562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>The Vision Institute & Library | Mani Sir</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Warm Cream & Royal Educational Palette */
+      --bg-cream-base: #fdfbf7;
+      --bg-cream-alt: #f6f1e8;
+      --bg-cream-soft: #fbf8f2;
+      --card-cream: #ffffff;
+      --card-border: #ede4d3;
+      
+      --royal-navy: #1b2a4a;
+      --royal-navy-light: #2c3e66;
+      --deep-bronze: #8c5d26;
+      --warm-amber: #d97706;
+      --terracotta: #b45309;
+      
+      --whatsapp-green: #25D366;
+      --insta-pink: #E1306C;
+      --yt-red: #FF0000;
+      
+      --text-main: #1e293b;
+      --text-muted: #576574;
+      --text-soft: #7a8b9e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+      -webkit-tap-highlight-color: transparent;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-cream-base);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(253, 251, 247, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1.5px solid var(--card-border);
+      box-shadow: 0 4px 20px rgba(27, 42, 74, 0.05);
+    }
+
+    .navbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 12px 20px;
+    }
+
+    .logo-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-circle {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--royal-navy), #0f172a);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffdda1;
+      font-size: 22px;
+      box-shadow: 0 4px 15px rgba(27, 42, 74, 0.2);
+      border: 2px solid #e2d2b5;
+    }
+
+    .logo-text h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--royal-navy);
+      letter-spacing: 0.8px;
+      line-height: 1.1;
+    }
+
+    .logo-text span {
+      font-size: 0.72rem;
+      color: var(--terracotta);
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      font-weight: 700;
+    }
+
+    .nav-links-wrap {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      list-style: none;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: var(--royal-navy);
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--warm-amber);
+    }
+
+    .social-strip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-left: 1.5px solid var(--card-border);
+      padding-left: 16px;
+    }
+
+    .social-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 16px;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-btn.yt { background: var(--yt-red); }
+    .social-btn.ig { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); }
+    .social-btn.wa { background: var(--whatsapp-green); }
+
+    .social-btn:hover {
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+    }
+
+    .mobile-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--royal-navy);
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+ 
+
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 84vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .hero-slides {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .hero-slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      background-size: cover;
+      background-position: center;
+      transform: scale(1.05);
+      transition: opacity 1.3s cubic-bezier(0.4, 0, 0.2, 1), transform 5s linear;
+    }
+
+    .hero-slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Professional Cream-Tone Frosted Overlay */
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(253,251,247,0.3) 0%, rgba(253,251,247,0.85) 45%, rgba(253,251,247,0.98) 100%);
+      z-index: 2;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 3;
+      max-width: 680px;
+      padding: 40px 32px;
+      margin-right: 5%;
+      text-align: right;
+      animation: heroFloat 1.2s ease-out;
+    }
+
+    @keyframes heroFloat {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fdf5e6;
+      border: 1.5px solid #d97706;
+      color: #92400e;
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 18px;
+      box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+    }
+
+    /* Animated Rich Multi-Tone Heading */
+    .hero-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.8rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 14px;
+      background: linear-gradient(120deg, #1b2a4a 0%, #b45309 30%, #1e3a8a 60%, #8c5d26 100%);
+      background-size: 250% 250%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: warmColorFlow 5s ease infinite alternate;
+    }
+
+    .hero-subtitle {
+      font-size: 1.32rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #b45309, #d97706, #1b2a4a, #b45309);
+      background-size: 250% 250%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: warmColorFlow 4s linear infinite;
+    }
+
+    @keyframes warmColorFlow {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .hero-team {
+      color: #475569;
+      font-size: 1.02rem;
+      line-height: 1.7;
+      margin-bottom: 28px;
+      font-weight: 500;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: linear-gradient(135deg, #128C7E, #25D366);
+      color: #fff;
+      text-decoration: none;
+      padding: 14px 30px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      box-shadow: 0 8px 20px rgba(18, 140, 126, 0.25);
+      transition: all 0.35s ease;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 25px rgba(18, 140, 126, 0.4);
+    }
+
+    
+    .quick-jump-bar {
+      background: #f3ede2;
+      padding: 18px 10px;
+      border-top: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      position: relative;
+      z-index: 10;
+    }
+
+    .jump-btn-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .jump-btn {
+      text-decoration: none;
+      padding: 11px 22px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.84rem;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.35s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .jump-btn:hover {
+      transform: translateY(-3px) scale(1.03);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    }
+
+    .btn-c1 { background: linear-gradient(135deg, #8c5d26, #b45309); }
+    .btn-c2 { background: linear-gradient(135deg, #1b2a4a, #2c3e66); }
+    .btn-c3 { background: linear-gradient(135deg, #0f766e, #115e59); }
+    .btn-c4 { background: linear-gradient(135deg, #d97706, #f59e0b); color: #fff !important; }
+    .btn-c5 { background: linear-gradient(135deg, #991b1b, #c2410c); }
+    .btn-c6 { background: linear-gradient(135deg, #334155, #1e293b); }
+
+
+    section {
+      padding: 70px 20px;
+      position: relative;
+    }
+
+    .section-title-wrap {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--royal-navy);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 12px;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 75px;
+      height: 4px;
+      background: linear-gradient(90deg, var(--deep-bronze), var(--warm-amber));
+      border-radius: 10px;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    /* Sliders */
+    .slider-container {
+      width: 100%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 15px 10px;
+    }
+
+    .slider-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 22px;
+      width: max-content;
+    }
+
+
+
+    #courses { background: var(--bg-cream-base); }
+
+    .course-card {
+      width: 295px;
+      background: var(--card-cream);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(27, 42, 74, 0.06);
+      transition: all 0.4s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--card-border);
+    }
+
+    .course-card:hover, .course-card.active-tap {
+      transform: translateY(-8px);
+      box-shadow: 0 14px 30px rgba(140, 93, 38, 0.16);
+      border-color: var(--warm-amber);
+    }
+
+    .course-img-wrap {
+      width: 100%;
+      height: 175px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .course-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .course-card:hover .course-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .course-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: rgba(27, 42, 74, 0.9);
+      color: #ffdca3;
+      padding: 5px 11px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .course-info {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
+
+    .course-info h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--royal-navy);
+      margin-bottom: 8px;
+    }
+
+    .course-info p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    .course-wa-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #128C7E, #25D366);
+      color: #fff;
+      border: none;
+      padding: 11px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(18, 140, 126, 0.2);
+    }
+
+    .course-wa-btn:hover {
+      box-shadow: 0 6px 18px rgba(18, 140, 126, 0.35);
+      transform: translateY(-2px);
+    }
+
+
+    #our-library { background: var(--bg-cream-alt); }
+
+    .lib-card {
+      width: 320px;
+      background: var(--card-cream);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(27, 42, 74, 0.05);
+      border: 1px solid var(--card-border);
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+
+    .lib-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--deep-bronze);
+    }
+
+    .lib-img-wrap {
+      width: 100%;
+      height: 190px;
+    }
+
+    .lib-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .lib-overlay-text {
+      padding: 18px;
+      text-align: center;
+    }
+
+    .lib-overlay-text h4 {
+      font-size: 1.05rem;
+      color: var(--royal-navy);
+      font-weight: 700;
+    }
+
+    .lib-overlay-text span {
+      font-size: 0.82rem;
+      color: var(--terracotta);
+      font-weight: 600;
+    }
+
+  
+    #faculty { background: var(--bg-cream-base); }
+
+    .fac-card {
+      width: 275px;
+      background: var(--card-cream);
+      border-radius: 20px;
+      padding: 26px 20px;
+      text-align: center;
+      box-shadow: 0 6px 20px rgba(27, 42, 74, 0.05);
+      border: 1px solid var(--card-border);
+      transition: all 0.35s ease;
+    }
+
+    .fac-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--warm-amber);
+      box-shadow: 0 12px 25px rgba(217, 119, 6, 0.15);
+    }
+
+    .fac-img-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--deep-bronze), var(--warm-amber));
+    }
+
+    .fac-img-wrap img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .fac-name {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--royal-navy);
+      margin-bottom: 4px;
+    }
+
+    .fac-subject {
+      color: var(--terracotta);
+      font-weight: 600;
+      font-size: 0.88rem;
+      margin-bottom: 10px;
+    }
+
+    .fac-exp {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      background: #f6f1e8;
+      padding: 5px 12px;
+      border-radius: 20px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+   
+    #selections { background: var(--bg-cream-alt); }
+
+    .sel-card {
+      width: 250px;
+      background: var(--card-cream);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(27, 42, 74, 0.05);
+      border-top: 4px solid var(--warm-amber);
+      border-left: 1px solid var(--card-border);
+      border-right: 1px solid var(--card-border);
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.35s ease;
+      text-align: center;
+    }
+
+    .sel-card:hover {
+      transform: translateY(-7px) scale(1.02);
+      box-shadow: 0 12px 25px rgba(217, 119, 6, 0.16);
+    }
+
+    .sel-img-box {
+      width: 96px;
+      height: 96px;
+      margin: 20px auto 10px;
+      border-radius: 50%;
+      border: 3px solid #f6deb4;
+      overflow: hidden;
+    }
+
+    .sel-img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sel-info {
+      padding: 10px 16px 20px;
+    }
+
+    .sel-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--royal-navy);
+    }
+
+    .sel-post {
+      color: #047857;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin: 4px 0;
+    }
+
+    .sel-exam {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+
+
+    #about-us { background: var(--bg-cream-base); }
+
+    .about-container {
+      max-width: 960px;
+      margin: 0 auto;
+      text-align: center;
+      line-height: 1.9;
+      font-size: 1.05rem;
+      color: #334155;
+      background: var(--card-cream);
+      padding: 42px;
+      border-radius: 20px;
+      border: 1px solid var(--card-border);
+      box-shadow: 0 8px 25px rgba(27, 42, 74, 0.05);
+    }
+
+    footer {
+      background: #141f36;
+      color: #cbd5e1;
+      padding-top: 60px;
+      border-top: 4px solid var(--warm-amber);
+    }
+
+    .footer-container {
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 0 20px 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-map-box h3, .footer-content-box h3 {
+      font-family: 'Cinzel', serif;
+      color: #ffdca3;
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .map-preview-card {
+      display: block;
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid rgba(255, 221, 163, 0.3);
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .map-preview-card:hover {
+      transform: scale(1.02);
+    }
+
+    .map-preview-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .map-tag {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(20, 31, 54, 0.92);
+      padding: 10px 15px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .footer-contacts {
+      margin-top: 20px;
+    }
+
+    .footer-contacts p {
+      font-size: 0.95rem;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .footer-social-link {
+      padding: 8px 16px;
+      border-radius: 25px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .f-wa { background: var(--whatsapp-green); }
+    .f-ig { background: var(--insta-pink); }
+    .f-yt { background: var(--yt-red); }
+
+    .profession-quote {
+      font-style: italic;
+      line-height: 1.8;
+      font-size: 1rem;
+      color: #e2e8f0;
+      border-left: 3px solid var(--warm-amber);
+      padding-left: 18px;
+      margin-bottom: 30px;
+    }
+
+    .dev-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px dashed #ffdca3;
+      border-radius: 16px;
+      padding: 22px;
+    }
+
+    .dev-box h4 {
+      color: #ffdca3;
+      font-size: 1.12rem;
+      letter-spacing: 0.8px;
+      font-weight: 800;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dev-box p {
+      font-size: 0.85rem;
+      color: #cbd5e1;
+      margin-bottom: 14px;
+    }
+
+    .dev-call-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffdca3;
+      color: #141f36;
+      text-decoration: none;
+      padding: 9px 20px;
+      border-radius: 25px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+
+    .dev-call-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .footer-bottom {
+      background: #0d1525;
+      text-align: center;
+      padding: 16px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 900px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+      .hero {
+        justify-content: center;
+        min-height: 75vh;
+      }
+      .hero-content {
+        text-align: center;
+        margin-right: 0;
+        padding: 30px 16px;
+      }
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .hero-subtitle {
+        font-size: 1.15rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+      .nav-links-wrap {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: #fdfbf7;
+        flex-direction: column;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+        border-bottom: 1px solid var(--card-border);
+      }
+      .nav-links-wrap.show {
+        display: flex;
+      }
+      .nav-links {
+        flex-direction: column;
+        gap: 14px;
+      }
+      .social-strip {
+        border-left: none;
+        padding-left: 0;
+        margin-top: 15px;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <a href="#home" class="logo-box">
+        <div class="logo-circle">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="logo-text">
+          <h2>THE VISION</h2>
+          <span>Institute & Library</span>
+        </div>
+      </a>
+
+      <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <div class="nav-links-wrap" id="navWrap">
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about-us">About</a></li>
+          <li><a href="#courses">Courses</a></li>
+          <li><a href="#contact">Contacts</a></li>
+        </ul>
+
+        <div class="social-strip">
+          <a href="https://www.youtube.com/@THEVISIONBYMANISIR" target="_blank" class="social-btn yt" title="YouTube Channel">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://www.instagram.com/thevisionbymanisir/?hl=en" target="_blank" class="social-btn ig" title="Instagram Profile">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://wa.me/916393944325?text=Namaste%20Mani%20Sir%2C%20I%20visited%20The%20Vision%20Institute%20website%20and%20would%20like%20guidance%20regarding%20admission." target="_blank" class="social-btn wa" title="Chat on WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero" id="home">
+    <div class="hero-slides">
+      <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1524178232363-1fb2b075b655?q=80&w=1600&auto=format&fit=crop');"></div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1497633762265-9d179a990aa6?q=80&w=1600&auto=format&fit=crop');"></div>
+      <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1600&auto=format&fit=crop');"></div>
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <div class="badge-live"><i class="fa-solid fa-award"></i> ADMISSIONS OPEN 2026</div>
+      <h1 class="hero-title">THE VISION INSTITUTE & LIBRARY</h1>
+      <div class="hero-subtitle">Guidance of MANI SIR & TEAM</div>
+      <p class="hero-team">
+        Empowering aspirants with structured classroom pedagogy, rigorous mock evaluations, and an ultra-peaceful smart library ecosystem designed for top competitive ranks.
+      </p>
+      <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20want%20to%20know%20more%20details%20about%20your%20upcoming%20batches." target="_blank" class="hero-cta">
+        <i class="fa-brands fa-whatsapp"></i> Chat with Mani Sir
+      </a>
+    </div>
+  </div>
+
+  <div class="quick-jump-bar">
+    <div class="jump-btn-container">
+      <a href="#courses" class="jump-btn btn-c1"><i class="fa-solid fa-book-open"></i> OUR COURSES</a>
+      <a href="#our-library" class="jump-btn btn-c2"><i class="fa-solid fa-book-reader"></i> OUR LIBRARY</a>
+      <a href="#faculty" class="jump-btn btn-c3"><i class="fa-solid fa-chalkboard-user"></i> FACULTY</a>
+      <a href="#selections" class="jump-btn btn-c4"><i class="fa-solid fa-trophy"></i> SELECTIONS</a>
+      <a href="#location" class="jump-btn btn-c5"><i class="fa-solid fa-location-dot"></i> LOCATION</a>
+      <a href="#about-us" class="jump-btn btn-c6"><i class="fa-solid fa-circle-info"></i> ABOUT US</a>
+    </div>
+  </div>
+
+  <section id="courses">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Our Courses</h2>
+      <p class="section-subtitle">Targeted batches meticulously designed for competitive exam success</p>
+    </div>
+
+    <div class="slider-container" id="courseSlider">
+      <div class="slider-track">
+        <div class="course-card" onclick="highlightCard(this)">
+          <div class="course-img-wrap">
+            <span class="course-badge">UPSC / PCS</span>
+            <img src="https://i.ibb.co/tTxNFbCR/Whats-App-Image-2026-09-07-at-1-59-49-PM.jpg" alt="Civil Services" />
+          </div>
+          <div class="course-info">
+            <div>
+              <h3>Civil Services Special</h3>
+              <p>Foundation to Advance GS, CSAT, Answer Writing & Personal Mentorship by Mani Sir.</p>
+            </div>
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20am%20interested%20in%20Civil%20Services%20Special%20Course." target="_blank" class="course-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="course-card" onclick="highlightCard(this)">
+          <div class="course-img-wrap">
+            <span class="course-badge">SSC BATCH</span>
+            <img src="https://i.ibb.co/kgk1RgMx/Whats-App-Image-2026-09-07-at-1-59-47-PM.jpg" alt="SSC Exams" />
+          </div>
+          <div class="course-info">
+            <div>
+              <h3>SSC CGL / CHSL / CPO</h3>
+              <p>Targeted batch with daily speed tests, shortcut math methods, and high-yield GS notes.</p>
+            </div>
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20am%20interested%20in%20SSC%20Batch." target="_blank" class="course-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="course-card" onclick="highlightCard(this)">
+          <div class="course-img-wrap">
+            <span class="course-badge">STATE EXAMS</span>
+            <img src="https://i.ibb.co/GjnLnXr/Whats-App-Image-2026-09-07-at-1-59-48-PM-1.jpg" alt="UPSSSC Exams" />
+          </div>
+          <div class="course-info">
+            <div>
+              <h3>SUPER TET SPECIAL</h3>
+              <p>Complete syllabus coverage with state GK special notes and previous year mock analysis.</p>
+            </div>
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20am%20inquiring%20about%20UPSSSC%20batches." target="_blank" class="course-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="course-card" onclick="highlightCard(this)">
+          <div class="course-img-wrap">
+            <span class="course-badge">POLICE FORCE</span>
+            <img src="https://i.ibb.co/1tbYnY4T/Whats-App-Image-2026-09-07-at-1-59-49-PM-1.jpg" alt="UP Police SI" />
+          </div>
+          <div class="course-info">
+            <div>
+              <h3>UP Police SI & Constable</h3>
+              <p>Specialized law & constitution modules, Hindi grammar, and speed practice tests.</p>
+            </div>
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20want%20to%20join%20the%20UP%20Police%20Batch." target="_blank" class="course-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="course-card" onclick="highlightCard(this)">
+          <div class="course-img-wrap">
+            <span class="course-badge">TEACHING</span>
+            <img src="https://i.ibb.co/ccvdNVhy/Whats-App-Image-2026-09-07-at-1-59-50-PM.jpg" alt="Banking IBPS SBI" />
+          </div>
+          <div class="course-info">
+            <div>
+              <h3>TET AND SUPERTET)</h3>
+              <p>High-level Data Interpretation, Reasoning Puzzles, and Computer-based Mock Tests.</p>
+            </div>
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20Please%20share%20Banking%20Batch%20information." target="_blank" class="course-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="course-card" onclick="highlightCard(this)">
+          <div class="course-img-wrap">
+            <span class="course-badge">TEST </span>
+            <img src="https://i.ibb.co/BKcqhzQM/Whats-App-Image-2026-09-07-at-1-59-41-PM.jpg" alt="Railway Exams" />
+          </div>
+          <div class="course-info">
+            <div>
+              <h3>BOOSTER TEST SERIES</h3>
+              <p>General Science special crash sessions, numerical problem tricks, and revision sets.</p>
+            </div>
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20am%20inquiring%20about%20Railway%20Batch." target="_blank" class="course-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="course-card" onclick="highlightCard(this)">
+          <div class="course-img-wrap">
+            <span class="course-badge">GS FOUNDATION</span>
+            <img src="https://i.ibb.co/k2cMc2SC/Whats-App-Image-2026-09-07-at-1-59-40-PM.jpg" alt="GS Master Course" />
+          </div>
+          <div class="course-info">
+            <div>
+              <h3>One-Year GS Master Program</h3>
+              <p>Detailed conceptual foundation across History, Geography, Polity, Economy & Science.</p>
+            </div>
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20want%20to%20know%20about%20One-Year%20GS%20Master%20Program." target="_blank" class="course-wa-btn">
+              <i class="fa-brands fa-whatsapp"></i> Inquire on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="our-library">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Our Library</h2>
+      <p class="section-subtitle">Ultra-quiet, air-conditioned, and fully equipped self-study space</p>
+    </div>
+
+    <div class="slider-container" id="librarySlider">
+      <div class="slider-track">
+        <div class="lib-card">
+          <div class="lib-img-wrap">
+            <img src="https://i.ibb.co/HTQkDMjw/Whats-App-Image-2026-09-07-at-1-59-42-PM.jpg" alt="Silent Study" />
+          </div>
+          <div class="lib-overlay-text">
+            <h4>Ultra Silent Study Zone</h4>
+            <span>Pin-drop silence for unbroken concentration</span>
+          </div>
+        </div>
+
+        <div class="lib-card">
+          <div class="lib-img-wrap">
+            <img src="https://i.ibb.co/2V7c1Vm/Gemini-Generated-Image-tu5r0mtu5r0mtu5r.png" alt="High Speed WiFi" />
+          </div>
+          <div class="lib-overlay-text">
+            <h4>High-Speed Fiber Wi-Fi</h4>
+            <span>Buffer-free online tests & video lectures</span>
+          </div>
+        </div>
+
+        <div class="lib-card">
+          <div class="lib-img-wrap">
+            <img src="https://i.ibb.co/21Rs8NFH/Gemini-Generated-Image-eo808leo808leo80.png" alt="Ergonomic Desks" />
+          </div>
+          <div class="lib-overlay-text">
+            <h4>Ergonomic Desks & Ports</h4>
+            <span>Comfortable seating with individual charging docks</span>
+          </div>
+        </div>
+
+        <div class="lib-card">
+          <div class="lib-img-wrap">
+            <img src="https://i.ibb.co/0RRtrY09/Gemini-Generated-Image-4gp6xv4gp6xv4gp6-1.png" alt="Newspapers" />
+          </div>
+          <div class="lib-overlay-text">
+            <h4>Daily Newspapers & Periodicals</h4>
+            <span>National dailies and monthly competitive magazines</span>
+          </div>
+        </div>
+
+        <div class="lib-card">
+          <div class="lib-img-wrap">
+            <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?q=80&w=600&auto=format&fit=crop" alt="Power Backup" />
+          </div>
+          <div class="lib-overlay-text">
+            <h4>24x7 Power Backup & RO Water</h4>
+            <span>100% uninterrupted study ecosystem</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faculty">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Our Faculty</h2>
+      <p class="section-subtitle">Dedicated mentors with proven track records in competitive exams</p>
+    </div>
+
+    <div class="slider-container" id="facultySlider">
+      <div class="slider-track">
+        <div class="fac-card">
+          <div class="fac-img-wrap">
+            <img src="https://i.ibb.co/hR9vf5wc/Whats-App-Image-2026-09-07-at-1-59-50-PM.jpg" alt="Mani Sir" />
+          </div>
+          <h3 class="fac-name">Mani Sir</h3>
+          <div class="fac-subject">Director & GS Expert</div>
+          <div class="fac-exp">12+ Years Experience</div>
+        </div>
+
+        <div class="fac-card">
+          <div class="fac-img-wrap">
+            <img src="https://i.ibb.co/GQp4CG6S/Whats-App-Image-2026-09-07-at-3-08-49-PM.jpg" alt="Faculty" />
+          </div>
+          <h3 class="fac-name">Adarsh sir</h3>
+          <div class="fac-subject">Quantitative Aptitude/Maths</div>
+          <div class="fac-exp">9+ Years Experience</div>
+        </div>
+
+        <div class="fac-card">
+          <div class="fac-img-wrap">
+            <img src="https://i.ibb.co/tP2z6TnQ/Whats-App-Image-2026-09-07-at-3-26-25-PM-1.jpg" alt="Faculty" />
+          </div>
+          <h3 class="fac-name">Vinay Mishra sir</h3>
+          <div class="fac-subject">Reasoning specialist</div>
+          <div class="fac-exp">10+ Years Experience</div>
+        </div>
+
+        <div class="fac-card">
+          <div class="fac-img-wrap">
+            <img src="https://t4.ftcdn.net/jpg/06/77/88/69/360_F_677886962_J3a7JV4erTy0atg44dJsOGcKuwz3Jvsi.jpg" alt="Faculty" />
+          </div>
+          <h3 class="fac-name">Salilendra sir</h3>
+          <div class="fac-subject">Sceince specialist</div>
+          <div class="fac-exp">7+ Years Experience</div>
+        </div>
+
+        <div class="fac-card">
+          <div class="fac-img-wrap">
+            <img src="https://t4.ftcdn.net/jpg/06/77/88/69/360_F_677886962_J3a7JV4erTy0atg44dJsOGcKuwz3Jvsi.jpg" alt="Faculty" />
+          </div>
+          <h3 class="fac-name">Ratnesh sir</h3>
+          <div class="fac-subject">Hindi specialist</div>
+          <div class="fac-exp">8+ Years Experience</div>
+        </div>
+
+        <div class="fac-card">
+          <div class="fac-img-wrap">
+            <img src="https://i.ibb.co/HTsQZJ26/Whats-App-Image-2026-09-07-at-3-31-01-PM.jpg" alt="Faculty" />
+          </div>
+          <h3 class="fac-name">Avnish sir</h3>
+          <div class="fac-subject">English slpecialist</div>
+          <div class="fac-exp">6+ Years Experience</div>
+        </div>
+
+        <div class="fac-card">
+          <div class="fac-img-wrap">
+            <img src="https://i.ibb.co/hR9vf5wc/Whats-App-Image-2026-09-07-at-1-59-50-PM.jpg" alt="Faculty" />
+          </div>
+          <h3 class="fac-name">Mani sir</h3>
+          <div class="fac-subject">Polity and geography specialist</div>
+          <div class="fac-exp">8+ Years Experience</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="selections">
+    <div class="section-title-wrap">
+      <h2 class="section-title">Our Selections</h2>
+      <p class="section-subtitle">Proud alumni of The Vision Institute & Library</p>
+    </div>
+
+    <div class="slider-container" id="selectionSlider">
+      <div class="slider-track">
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/ymb4yHZs/2026-09-07.pngS" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">Alok Tripathi</h4>
+            <div class="sel-post">Sub-Inspector (SI)</div>
+            <div class="sel-exam">UP Police 2024</div>
+          </div>
+        </div>
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/hFSxzPF0/Whats-App-Image-2026-09-07-at-3-27-51-PM.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name"></h4>
+            <div class="sel-post">LEKHPAL</div>
+            <div class="sel-exam">UPSSSC</div>
+          </div>
+        </div>
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/782B42V/Whats-App-Image-2026-09-07-at-3-27-52-PM.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">DIVYANSHI SINGH</h4>
+            <div class="sel-post">UPP</div>
+            <div class="sel-exam"></div>
+          </div>
+        </div>
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/PZ1fL7QW/Whats-App-Image-2026-09-07-at-3-27-53-PM.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">Sandeep singh</h4>
+            <div class="sel-post">UPP</div>
+            <div class="sel-exam"></div>
+          </div>
+        </div>
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/wNhXKCMs/Whats-App-Image-2026-09-07-at-3-27-53-PM-1.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">ARYA PRATAP SINGH</h4>
+            <div class="sel-post">UPP</div>
+            <div class="sel-exam"></div>
+          </div>
+        </div>
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/9m8sHKpn/Whats-App-Image-2026-09-07-at-3-27-53-PM-2.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">DAROGA </h4>
+            <div class="sel-post">UP POLICE</div>
+            <div class="sel-exam"></div>
+          </div>
+        </div>
+
+       
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/rK8hwNp8/Whats-App-Image-2026-09-07-at-3-27-55-PM.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">DROGA</h4>
+            <div class="sel-post"></div>
+            <div class="sel-exam">Up police</div>
+          </div>
+        </div>
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/LDHMhZmd/Whats-App-Image-2026-09-07-at-3-27-55-PM-1.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">JAYDEEP SINGH</h4>
+            <div class="sel-post">UPP</div>
+            <div class="sel-exam"></div>
+          </div>
+        </div>
+
+        <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/d09qYCYb/Whats-App-Image-2026-09-07-at-3-27-56-PM.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">HEMANT Yadav</h4>
+            <div class="sel-post">UPP</div>
+            <div class="sel-exam"></div>
+          </div>
+        </div>
+		<div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.ibb.co/nsy3tH2z/Whats-App-Image-2026-09-07-at-3-27-57-PM.jpg" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">ROHIT SHARMA</h4>
+            <div class="sel-post">UPP</div>
+            <div class="sel-exam"></div>
+          </div>
+        </div>
+		 <div class="sel-card">
+          <div class="sel-img-box"><img src="https://i.pinimg.com/originals/21/ed/4f/21ed4f0ed02805fb8f050f4b487a6e40.gif" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">MORE SELECTED <BR>UP POLICE<BR>AND OTHER EXAM </h4>
+            <div class="sel-post"></div>
+            <div class="sel-exam">UP Police </div>
+          </div>
+        </div>
+		 <div class="sel-card">
+          <div class="sel-img-box"><img src="https://media.tenor.com/NodGWyXR-6wAAAAM/peachandgoma-goma.gif" alt="Student" /></div>
+          <div class="sel-info">
+            <h4 class="sel-name">NEXT YOU</h4>
+            <div class="sel-post"></div>
+            <div class="sel-exam"> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about-us">
+    <div class="section-title-wrap">
+      <h2 class="section-title">About Us</h2>
+      <p class="section-subtitle">Dedicated to transforming ambition into government service careers</p>
+    </div>
+    <div class="about-container">
+      <p>
+        <strong>The Vision Institute and Library</strong> was founded with a singular conviction: to make high-quality, authentic competitive examination coaching accessible to every serious aspirant. Under the mentorship of <strong>Mani Sir and an experienced team of educators</strong>, we combine disciplined classroom pedagogy with test-series rigor and a tranquil library infrastructure. Here, dreams are nurtured with precision, clarity, and daily personal evaluation.
+      </p>
+    </div>
+  </section>
+ 
+
+<section id="coaching-memories" style="background: var(--bg-cream-alt); overflow: hidden; padding: 60px 0;">
+  <div class="section-title-wrap" style="padding: 0 20px; text-align: center; margin-bottom: 35px;">
+    <h2 class="section-title">Coaching Memories</h2>
+  </div>
+
+  <style>
+    @keyframes memoriesFullScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .memories-wrapper:hover .memories-infinite-track {
+      animation-play-state: paused;
+    }
+  </style>
+
+  <div class="memories-wrapper" style="width: 100%; overflow: hidden; position: relative;">
+    <div class="memories-infinite-track" style="display: flex; gap: 20px; width: max-content; animation: memoriesFullScroll 32s linear infinite; padding: 10px 10px;">
+      
+     
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/VpSnf91V/Whats-App-Image-2026-09-07-at-3-27-51-PM-1.jpg" alt="Memory 1" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+      
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/YFFzkJDw/Whats-App-Image-2026-09-07-at-7-09-14-PM.jpg" alt="Memory 2" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+ 
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/wmmVYzb/Whats-App-Image-2026-09-07-at-7-09-14-PM-1.jpg" alt="Memory 3" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+      
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/ks56fq8h/2026-09-07-1.png" alt="Memory 4" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/8LhWbhmT/Whats-App-Image-2026-09-07-at-7-09-15-PM.jpg" alt="Memory 5" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+     
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/1JX57X6z/Whats-App-Image-2026-09-07-at-7-13-07-PM-1.jpg" alt="Memory 6" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+     
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/svPYcMZW/Whats-App-Image-2026-09-07-at-7-13-10-PM.jpg" alt="Memory 7" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+    
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/mVgcHq8q/Whats-App-Image-2026-09-07-at-7-13-07-PM.jpg" alt="Memory 8" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;" onmouseover="this.style.transform='scale(1.08)'" onmouseout="this.style.transform='scale(1)'" />
+      </div>
+
+     
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://i.ibb.co/F45Pc0s5/Whats-App-Image-2026-09-07-at-7-13-05-PM.jpg" alt="Memory 1 Clone" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=700&auto=format&fit=crop" alt="Memory 2 Clone" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+      <div style="width: 320px; height: 220px; border-radius: 18px; overflow: hidden; box-shadow: 0 6px 20px rgba(27, 42, 74, 0.08); border: 2px solid var(--card-border); flex-shrink: 0;">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=700&auto=format&fit=crop" alt="Memory 3 Clone" style="width: 100%; height: 100%; object-fit: cover;" />
+      </div>
+
+    </div>
+  </div>
+</section>
+  <footer id="location">
+    <div class="footer-container">
+      <div class="footer-map-box">
+        <h3><i class="fa-solid fa-map-location-dot"></i> Visit Our Center</h3>
+        <a href="https://maps.app.goo.gl/sqUdepgHNcG2oUxJ6" target="_blank" class="map-preview-card" title="Open Google Maps Location">
+          <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=700&auto=format&fit=crop" alt="Location Map Preview" />
+          <div class="map-tag">
+            <span><i class="fa-solid fa-location-arrow"></i> Tap to open in Google Maps</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </div>
+        </a>
+
+        <div class="footer-contacts" id="contact">
+          <p><i class="fa-solid fa-phone" style="color: #ffdca3;"></i> <strong>Direct Helpline:</strong> +91 6393944325</p>
+          <p><i class="fa-solid fa-envelope" style="color: #ffdca3;"></i> thevisioninstitute@gmail.com</p>
+
+          <div class="footer-socials">
+            <a href="https://wa.me/916393944325?text=Hello%20Mani%20Sir%2C%20I%20want%20to%20visit%20The%20Vision%20Institute." target="_blank" class="footer-social-link f-wa">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </a>
+            <a href="https://www.instagram.com/thevisionbymanisir/?hl=en" target="_blank" class="footer-social-link f-ig">
+              <i class="fa-brands fa-instagram"></i> Instagram
+            </a>
+            <a href="https://www.youtube.com/@THEVISIONBYMANISIR" target="_blank" class="footer-social-link f-yt">
+              <i class="fa-brands fa-youtube"></i> YouTube
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-content-box">
+        <h3><i class="fa-solid fa-quote-left"></i> Our Mission & Passion</h3>
+        <p class="profession-quote">
+          "Teaching is not just a profession for us; it is a sacred commitment to awaken potential, instill unwavering discipline, and build nation builders. At The Vision Institute, we measure our success strictly by the pride in our students' eyes when they receive their appointment letters."
+        </p>
+
+        <div class="dev-box">
+          <h4><i class="fa-solid fa-code"></i> DEVELOPED BY RAJ NEXA ZEN WEB FOUNDATION</h4>
+          <p>Need high-converting, lightning-fast modern websites for your coaching, brand, or business? Contact us today:</p>
+          <a href="tel:9305333122" class="dev-call-btn">
+            <i class="fa-solid fa-phone-volume"></i> Call / WhatsApp: 9305333122
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 The Vision Institute and Library | Under Guidance of Mani Sir & Team. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    
+    const mobileToggle = document.getElementById('mobileToggle');
+    const navWrap = document.getElementById('navWrap');
+    mobileToggle.addEventListener('click', () => navWrap.classList.toggle('show'));
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => navWrap.classList.remove('show'));
+    });
+
+    const heroSlides = document.querySelectorAll('.hero-slide');
+    let currentHero = 0;
+    setInterval(() => {
+      heroSlides[currentHero].classList.remove('active');
+      currentHero = (currentHero + 1) % heroSlides.length;
+      heroSlides[currentHero].classList.add('active');
+    }, 4200);
+
+   
+    function highlightCard(card) {
+      document.querySelectorAll('.course-card').forEach(c => c.classList.remove('active-tap'));
+      card.classList.add('active-tap');
+    }
+
+    
+    function setupAutoScroller(sliderId, speed = 1, reverse = false) {
+      const slider = document.getElementById(sliderId);
+      if (!slider) return;
+
+      let isHovered = false;
+      slider.addEventListener('mouseenter', () => isHovered = true);
+      slider.addEventListener('mouseleave', () => isHovered = false);
+      slider.addEventListener('touchstart', () => isHovered = true, { passive: true });
+      slider.addEventListener('touchend', () => isHovered = false, { passive: true });
+
+      if (reverse) {
+        slider.scrollLeft = slider.scrollWidth - slider.clientWidth;
+      }
+
+      setInterval(() => {
+        if (!isHovered) {
+          if (!reverse) {
+            if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth - 1) {
+              slider.scrollLeft = 0;
+            } else {
+              slider.scrollLeft += speed;
+            }
+          } else {
+            if (slider.scrollLeft <= 1) {
+              slider.scrollLeft = slider.scrollWidth - slider.clientWidth;
+            } else {
+              slider.scrollLeft -= speed;
+            }
+          }
+        }
+      }, 25);
+    }
+
+    window.addEventListener('load', () => {
+      setupAutoScroller('courseSlider', 1.2, false);
+      setupAutoScroller('librarySlider', 1.1, true);
+      setupAutoScroller('facultySlider', 1.2, false);
+      setupAutoScroller('selectionSlider', 1.3, false);
+    });
+	setupAutoScroller('memoriesSlider', 1.2, false);
+  </script>
+</body>
+</html>
